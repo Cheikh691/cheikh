@@ -1,0 +1,137 @@
+# Importation des bibliothèques nécessaires
+import tkinter as tk # Pour créer l'interface graphique
+import matplotlib.pyplot as plt # Pour créer le graphique
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg # Pour intégrer le graphique dans le canevas
+import serial # Pour communiquer avec le port série
+import serial.tools.list_ports as prtlst # Pour lister les ports disponibles
+from random import randint  # Importation de randint pour générer des valeurs aléatoires (à enlever si pas utilisé)
+
+# Fonction pour trouver le port avec des mots-clés spécifiques
+def recherche_port_STM32():
+    listeDesPorts = prtlst.comports() # Récupération de la liste des ports
+    Recherche = ['STM32', 'STLink', 'USB'] # Mots-clés à rechercher
+    for i in range(len(Recherche)): # Pour chaque mot-clé
+        for pt in listeDesPorts: # Pour chaque port
+            if Recherche[i] in pt[1]: # Si le mot-clé est dans le nom du port
+                return pt[0] # Retourner le nom du port
+
+# Fonction pour créer des cercles LED sur le canevas
+def create_leds(canvas, led_radius, led_positions):
+    for position in led_positions: # Pour chaque position de LED
+        x, y = position # Récupération des coordonnées x et y
+        canvas.create_oval(x - led_radius, y - led_radius, # Création d'un cercle avec le rayon donné
+                            x + led_radius, y + led_radius, outline='black', fill='grey') # Remplissage en gris
+
+# Fonction pour mettre à jour l'affichage LED sur le canevas
+def update_display(canvas, level):
+    clear_display(canvas) # Effacement de l'affichage précédent
+    for i in range(level): # Pour chaque niveau de LED
+        if i == 0: # Si c'est le premier niveau
+            color = 'green' # Couleur verte
+        elif i == 1: # Si c'est le deuxième niveau
+            color = 'orange' # Couleur orange
+        elif i == 2: # Si c'est le troisième niveau
+            color = 'red' # Couleur rouge
+        else: # Sinon
+            color = 'grey' # Couleur grise
+        canvas.itemconfig(i + 1, fill=color) # Modification de la couleur du cercle correspondant
+
+# Fonction pour effacer l'affichage LED sur le canevas
+def clear_display(canvas):
+    for i in range(1, 4): # Pour chaque cercle
+        canvas.itemconfig(i, fill='grey') # Remplissage en gris
+
+# Fonction pour trouver la valeur maximale après 'cd' dans une chaîne de caractères
+def trouver_max_apres_cd(ch):
+    chaine_entree = ch # Récupération de la chaîne d'entrée
+    indices_cd = [i for i, char in enumerate(chaine_entree) if chaine_entree[i:i+2] == 'cd'] # Recherche des indices où 'cd' apparaît
+    max_values = [] # Liste des valeurs maximales
+    for index in indices_cd: # Pour chaque indice
+        start_index = index + 2 # Début de la sous-chaîne après 'cd'
+        end_index = start_index # Fin de la sous-chaîne
+        while end_index < len(chaine_entree) and chaine_entree[end_index].isdigit(): # Tant que la fin de la sous-chaîne est un chiffre
+            end_index += 1 # Incrémentation de la fin de la sous-chaîne
+        values = chaine_entree[start_index:end_index] # Extraction de la sous-chaîne
+        if values: # Si la sous-chaîne n'est pas vide
+            max_values.append(max(map(int, values.split()))) # Conversion en entiers, séparation par les espaces, et ajout de la valeur maximale à la liste
+    resultat = max(max_values, default=None) # Récupération de la valeur maximale de la liste, ou None si la liste est vide
+    return resultat # Retour du résultat
+
+# Fonction pour lire les données série
+def lire_donnees_serie(ser):
+    donnees_lues = ser.read(1000) # Lecture de 1000 octets sur le port série
+    print(donnees_lues) # Affichage des données lues
+    return donnees_lues # Retour des données lues
+
+
+# Fonction pour créer le graphique
+def create_graph(canvas, graph_width, graph_height, graph_position):
+    figure = plt.figure(figsize=(graph_width, graph_height,)) # Création d'une figure avec la largeur et la hauteur données
+    figure.set_facecolor("black") # Couleur de fond noire
+    ax = figure.add_subplot(111) # Ajout d'un sous-graphique
+    ax.set_xlim(0, 100) # Limites de l'axe des x
+    ax.set_ylim(0, 4) # Limites de l'axe des y
+    ax.set_xticks([]) # Pas de graduations sur l'axe des x
+    ax.set_yticks([]) # Pas de graduations sur l'axe des y
+    graph_values = [] # Liste des valeurs du graphique
+    line, = ax.plot(graph_values) # Création d'une ligne avec les valeurs du graphique
+    x, y = graph_position # Récupération des coordonnées x et y du graphique
+    graph_canvas = FigureCanvasTkAgg(figure, master=canvas) # Création d'un canevas pour intégrer le graphique
+    graph_canvas.get_tk_widget().place(x=x, y=y) # Placement du canevas à la position donnée
+    return graph_canvas, figure, ax, line, graph_values # Retour des éléments du graphique
+
+# Fonction pour mettre à jour le graphique
+def update_graph(graph_canvas, figure, ax, line, graph_values, level):
+    graph_values.append(level) # Ajout du niveau actuel à la liste des valeurs
+    if len(graph_values) > 100: # Si la liste dépasse 100 éléments
+        graph_values.pop(0) # Suppression du premier élément
+    line.set_data(range(len(graph_values)), graph_values) # Mise à jour des données de la ligne
+    figure.canvas.draw() # Dessin de la figure
+    graph_canvas.draw() # Dessin du canevas
+
+# Fonction pour la mise à jour de l'affichage
+def mise_a_jour_affichage():
+    plus_grande_valeur = trouver_max_apres_cd(lire_donnees_serie(portSerie).hex()) # Recherche de la plus grande valeur après 'cd' dans les données lues en hexadécimal
+    
+    if plus_grande_valeur == 0: # Si la plus grande valeur est 0
+        niveau_leds = 0 # Niveau des LEDs à 0
+    elif plus_grande_valeur == 1: # Si la plus grande valeur est 1
+        niveau_leds = 1 # Niveau des LEDs à 1
+    elif plus_grande_valeur == 3: # Si la plus grande valeur est 3
+        niveau_leds = 2 # Niveau des LEDs à 2
+    elif plus_grande_valeur == 7: # Si la plus grande valeur est 7
+        niveau_leds = 3 # Niveau des LEDs à 3
+    else: # Sinon
+        niveau_leds = 0 # Niveau des LEDs à 0
+
+    update_display(canvas, niveau_leds) # Mise à jour de l'affichage des LEDs
+    update_graph(graph_canvas, figure, ax, line, graph_values, niveau_leds) # Mise à jour du graphique
+
+    if root.winfo_exists(): # Si la fenêtre existe
+        root.after(10, mise_a_jour_affichage) # Appel de la fonction après 10 millisecondes
+
+root = tk.Tk() # Création de la fenêtre principale
+# Création du canevas
+canvas = tk.Canvas(root, width=600, height=700, bg="light blue") # Création d'un canevas avec la largeur, la hauteur et la couleur de fond données
+canvas.pack() # Affichage du canevas
+# Définir le rayon et la position des LEDs
+led_radius = 80
+led_positions = [(100, 150), (300, 150), (500, 150)]
+# Créer les LEDs sur le canvas
+create_leds(canvas, led_radius, led_positions)
+
+# Définir la largeur et la hauteur du graphique en pouces
+graph_width = 3
+graph_height = 3
+# Définir la position du graphique en pixels
+graph_position = (150,300)
+graph_canvas, figure, ax, line, graph_values = create_graph(canvas, graph_width, graph_height, graph_position)
+
+# Recherche du port USB pour la communication série
+portUSB = recherche_port_STM32()
+print(portUSB)
+portSerie = serial.Serial(port=portUSB, baudrate=921600, bytesize=serial.EIGHTBITS)
+
+# Mise à jour de l'affichage à intervalles réguliers
+root.after(10, mise_a_jour_affichage)
+root.mainloop()

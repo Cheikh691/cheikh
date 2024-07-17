@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page avec Image</title>
+</head>
+<body>
+    <img src="chemin_vers_votre_image.jpg" alt="Description de l'image">
+</body>
+</html>

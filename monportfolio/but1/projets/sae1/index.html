@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="uft-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUT1 - Tests d'une carte de commande moteur</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #007FFF;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #007FFF;
+    color: darkred;
+    font-size: 24px;
+    text-align: center;
+  }
+  td.colored {
+    background-color: #F0F8FF;
+  }
+  
+   
+.bouton {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 60px;
+    background-color: #007FFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Ajout de la transition */
+  }
+
+  .bouton:hover {
+    transform: translateY(-5px); /* Légèrement vers le haut lorsqu'on
+
+</style>
+</head>
+<body>
+<table>
+  <thead>
+    <tr>
+      <th colspan="5">Tests d'une carte de commande moteur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="colored">
+      <td colspan="5">
+        <p><b><u>Consignes :</u></b></p>
+        <p>L'objectif principal de cette SAE était de renforcer nos compétences en matière de vérification. Pour atteindre cet objectif, nous avons mis en œuvre quatre procédures distinctes de tests et de mesures sur une carte de commande électronique conçue pour les moteurs à courant continu. Nous avons redigé un rapport de procédé détaillé pour chaque test, puis on nous a donné un test au hasard pour lequel on va réaliser et faire son rapport de validation final le jour J. Le premier test était un appui dont on a réalisé en groupe , tandis que les tests suivants sont réalisés individuellement. Cette approche nous a permi de nous familiariser avec les principaux instruments de mesure utilisés en GEII. De plus, nous avons exploré l'utilisation de cette carte de commande, qui jouera un rôle crucial dans une autre SAE prévue pour le second semestre. Cette expérience nous fournira une compréhension approfondie et pratique des procédures de test et de mesure, tout en nous préparant pour les défis futurs.
+      </td>
+    </tr>
+    <tr style="background-color: #ADD8E6;">
+      <td width="20%"> Activités réalisées </td>
+    <td width="20%"> Ressources utilisées </td>
+    <td width="20%"> Traces </td>
+    <td width="20%"> Autoévaluation </td>
+    <tr>
+      <td class="colored">
+        <u><b>Test 1</b></u><br><br>
+        <b>Tâche :</b> Rétablir le Fonctionnement Général 1 du Banc de Test.<br>
+        <b>Objectif :</b> Vérifier et restaurer le fonctionnement global du banc de test pour assurer sa conformité. Obtenir des données sur les caractéristiques typiques de la vitesse de rotation en fonction du rapport cyclique pour l'ensemble carte moteur.
+      </td>
+      <td class="colored">
+        <b>Matériel :</b>Oscillioscope,GBF, Alimentaion, câble d'alimentation, BNC en T, T BNC banane,câble BNC Banane et
+câble BNC<br>
+        <b>Pédagogique :</b>Cour de TP d'électronique et d'énergie<br>
+		 <b>Logiciel:</b>word <br>
+        <b>Documentaire :</b>  <a href="doc/consigne.pdf" target="_blank"> consigne du sujet</a>,  <a href="doc/spec.pdf" target="_blank"> document de spécification technique</a>,formule pour calculer la vitesse de rotation.
+      </td>
+      <td class="colored">           
+            <p><a href="doc/test1.pdf" target="_blank">Rapport de validation</a></p></td>
+      <td class="colored">Ce test a été simple. La petite difficulté était les réglages de l’oscilloscope, mais avec les consignes de Mr. LUCAS et ce que nous avons appris en TP énergie et électronique, nous l’avons bien réalisé.</td>
+    </tr>
+	 <tr>
+      <td class="colored">
+        <u><b>Test 2</b></u><br><br>
+        <b>Tâche :</b> Rétablir le Fonctionnement Général 2 du Banc de Test.<br>
+        <b>Objectif :</b> Valider les valeurs de saturation et de consommation du moteur en effectuant les mesures suivantes : consommations à vide avec un rapport cyclique de 100% et le moteur bloqué et tensions à l’entrée du moteur avec un rapport cyclique de 100% et moteur bloqué .
+      </td>
+      <td class="colored">
+       <b>Matériel :</b>Oscillioscope,GBF,Alimentaion, câble d'alimentation,pointe touche, BNC banane. <br>
+        <b>Pédagogique :</b>Cour de TP d'électronique et d'énergie<br>
+		<b>Logiciel:</b>word <br>
+        <b>Documentaire :</b>consigne,document de spécification technique.
+      </td>
+      <td class="colored"> <p><a href="doc/test2.pdf" target="_blank">Rapport de validation </a></p></td></td>
+      <td class="colored">Ce test m’a été très simple. Toutes les mesures que j’ai trouvées correspondent à celles inscrites dans la fiche technique, à part la tension à l’entrée du moteur avec la saturation typique niveau bas qui dépasse les valeurs données dans la spécification. J’avais cru que c’était une erreur de ma part et ça m’avait un peu perturbé, mais au final c’était la carte qui n’était pas conforme.</td>
+    </tr>
+    <tr>
+    <td class="colored">
+      <u><b>Teste 3</b></u><br><br>
+      <b>Tâche:</b> Vérifier la Conformité des Temps de Commutation.<br>
+      <b>Objectif:</b> Valider les temps typiques de montée, descente et de délai des différentes commutations, en se concentrant spécifiquement sur les valeurs T1(Ven) et T3(Ven) indiquées dans la spécification.
+    </td>
+    <td class="colored">
+     <b>Matériel:</b>Oscillioscope,GBF,Alimentaion,câble d'alimentation, BNC banane ,pointe touche, raccord BNC en T et 
+câble BNC <br>
+        <b>Pédagogique :</b>Cour de TP d'électronique et d'énergie <br>
+		<b>Logiciel:</b>word <br>
+        <b>Documentaire :</b>consigne,document de spécification technique.
+    </td>
+    <td class="colored">  <p><a href="doc/test3.pdf" target="_blank"> Rapport de procédé</a></p></td> </td>
+    <td class="colored">Ce test n’etait pas aussi compliqué que ça, mais demandait beaucoup de compréhension mais avec les explications de Mr Lucas j'ai pu le faire</td>
+  </tr>
+  <tr>
+    <td class="colored">
+      <u><b>Teste 4</b></u><br><br>
+      <b>Tâche:</b> Valider la Conformité de la Carte et du Moteur.<br>
+      <b>Objectif:</b> Vérifier et valider l'ensemble carte et moteur . Assurer que les vitesses du moteur sont conformes aux caractéristiques typiques de vitesse de rotation en tr/min par rapport cyclique, telles que déterminées dans le rapport correspondant au fonctionnement général 1 du banc de test, pour les trois fréquences de fonctionnement : 50 Hz, 3 kHz et 20 kHz.
+    </td>
+    <td class="colored">
+      <b>Matériel :</b>Oscillioscope,GBF,Alimentaion,câble d'alimentation, BNC banane, T BNC banane, raccord BNC en T et 
+Câble BNC  <br>
+        <b>Pédagogique :</b>Cour d'électronique<br>
+		<b>Logiciel:</b>word <br>
+        <b>Documentaire :</b>consigne,document de spécification technique,formule pour calculer la vitesse de rotation.
+    </td>
+    <td class="colored">  <p><a href="doc/test4.pdf" target="_blank"> Rapport de procédé</a></p></td></td>
+    <td class="colored"> Le test était facile et ressemblait presque au premier. j'ai pas eu beaucoup de difficulté à le faire</td>
+  </tr>
+
+    <tr>
+      <td colspan="5" style="background-color: #007FFF; color: darkred; font-size: 24px; text-align: center;">
+      Analyse réflexive
+      </td>
+    </tr>
+    <tr class="colored">
+      <td colspan="5">
+        <p>
+
+Au cours de cette SAE, j'ai acquis une meilleure maîtrise des appareils, j'ai développé mes compétences en rédaction de rapports et j'ai appris à comprendre les datasheets. Malgré quelques difficultés initiales, notamment avec l'utilisation de l'oscilloscope, j'ai réussi à accomplir les tests. Les cours d'électronique et d'énergie m'ont été d'une grande aide pour comprendre un plan de câblage et l'utilisation des appareils. Cette SAE a renforcé ces compétences et m'a permis d'effectuer différentes mesures avec efficacité. Grâce à cela, j'ai pu développer la compétence 'vérifier le bon fonctionnement d'un système GEII'.
+      </td>
+    </tr>
+  
+ </table>
+  <table style="width:100%">
+	</tr>
+  <td style="padding-left:10%">
+            <a href="../../index.html" class="bouton">précedent</a>
+        </td>  
+		 
+		  <td style="padding-left:10%">
+            <a href="../../../index.html" class="bouton">Accueil</a>
+        </td>  
+		 </tr>
+  
+  </table>
+</body>
+</html>

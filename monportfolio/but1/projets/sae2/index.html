@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="uft-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUT1 - Réalisation d'un sonométre</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #007FFF;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #007FFF;
+    color: darkred;
+    font-size: 24px;
+    text-align: center;
+  }
+  td.colored {
+    background-color: #F0F8FF;
+  }
+  
+   
+.bouton {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 60px;
+    background-color: #007FFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Ajout de la transition */
+  }
+
+  .bouton:hover {
+    transform: translateY(-5px); /* Légèrement vers le haut lorsqu'on
+
+</style>
+</head>
+<body>
+<table>
+  <thead>
+    <tr>
+      <th colspan="5">Réalisation d'un sonométre</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="colored">
+      <td colspan="5">
+        <p><b><u>Consignes :</u></b></p>
+        <p>
+L'objectif de cette SAÉ était de nous introduire aux principes de conception et de fabrication de cartes électroniques en utilisant un logiciel de CAO, ainsi qu'à l'utilisation du nouveau laboratoire GEII et à la programmation en Python. Cette SAÉ s'est concentré sur la conception d'un sonomètre.
+
+
+
+
+
+</p>
+      </td>
+    </tr>
+    <tr style="background-color: #ADD8E6;">
+      <td width="20%"> Activités réalisées </td>
+    <td width="20%"> Ressources utilisées </td>
+    <td width="20%"> Traces </td>
+    <td width="20%"> Autoévaluation </td> 
+    <tr>
+      <td class="colored">
+        
+        <b>Tâche :</b> Reprendre le schéma de la carte sonomètre fourni.<br>
+        <b>Objectif :</b> Concevoir un schéma détaillé de la carte sonomètre, définissant les composants et leur interconnexion pour assurer la fonctionnalité globale du système.
+      </td>
+      <td class="colored">
+        <b>Matériel :</b>PC logiciel KiCad<br>
+        <b>Pédagogique :</b>cour CAO<br>
+        <b>Documentation :</b><a href="doc/sono.pdf" target="_blank">schema de départ</a>.
+      </td>
+      <td class="colored"><a href="doc/schemaa.pdf" target="_blank">réalisation du schema</a>.
+      <td class="colored">Cette partie était simple, mais par manque d’attention et de vérification, j’ai fait des erreurs sur les labels. Du coup, il y avait des composants mal liés, ce qui va impacter un peu la suite car je l’ai aperçu plus tard, mais j’avais compris tout le principe de cette partie.</td>
+    </tr>
+    <tr>
+    <td class="colored"> 
+      
+      <b>Tâche:</b> Réaliser le routage de la carte sonomètre.<br>
+      <b>Objectif:</b>Effectuer un routage efficace des composants sur le circuit imprimé pour garantir un bon agencement des pistes et une connectivité adéquate, tout en minimisant les interférences, les erreurs de conception et en respectant les contraintes.
+    </td>
+    <td class="colored"> 
+      <b>Matériel :</b>PC logiciel KiCad.<br>
+      <b>Pédagogique :</b>cour CAO.<br>
+      <b>Documentation :</b><a href="https://youtu.be/ISe4rvmxejk?si=inesgH_4BwD0ReQB" target="_blank"> Astuce Youtube</a></td></td>.
+    </td>
+    <td class="colored"> <a href="doc/routage.pdf" target="_blank">routage et vision 3D</a>.
+    <td class="colored"> La partie était un peu difficile, j’ai dû regarder des astuces sur YouTube pour pouvoir m’en sortir. C’était la partie qui me plaisait le plus car elle demandait de la créativité, du travail et de la concentration. Au final, j’ai obtenu une belle carte, mais comme il y avait des composants mal liés au niveau du schéma, cela va impacter le routage. </td>
+  </tr>
+  <tr>
+    <td class="colored"> 
+      
+      <b>Tâche:</b> Effectuer le perçage du circuit imprimé et la soudure des composants.<br>
+      <b>Objectif:</b> Percer précisément les trous nécessaires sur le circuit imprimé et souder les composants électroniques conformément aux spécifications pour assurer une connexion électrique stable et fiable.
+    <td class="colored"> 
+      <b>Matériel :</b>perceuse,station de soudage.<br>
+      <b>Pédagogique :</b>cour de Mr Laurent.<br>
+      
+    </td>
+    <td class="colored"><a href="doc/carte.pdf" target="_blank">carte</a>.
+    <td class="colored"> Cette partie était simple, je l’ai faite sans aucune difficulté.
+
+ </td>
+  </tr>
+   <tr>
+    <td class="colored"> 
+      
+      <b>Tâche:</b> Tester la carte sonomètre.<br>
+      <b>Objectif:</b>Vérifier le bon fonctionnement de la carte sonomètre en réalisant des tests visant à détecter les éventuels courts-circuits, à assurer la continuité des pistes et à confirmer que tous les composants sont opérationnels.
+    <td class="colored"> 
+      <b>Matériel :</b>Multimétre,oscilloscope,.<br>
+      <b>Pédagogique :</b>Cour de TP électronique.<br>
+      
+    </td>
+    <td class="colored"><a href="doc/video.mp4" ><img src="images/fleche.jpg"></a></td>
+    <td class="colored"> C’est dans cette partie que j’ai remarqué les erreurs au niveau du schéma. Du coup, j’ai dû prendre une autre carte et au final, après le test, ça a marché. </td>
+  </tr>
+  <tr>
+    <td class="colored"> 
+      
+      <b>Tâche:</b>  Élaborer un programme avec une interface en ligne de commande pour la connexion à la carte de liaison via USB<br>
+      <b>Objectif:</b> Développer un programme qui établit une connexion avec la carte de liaison via le port USB, lit 400 bits de données, et les convertit en une chaîne de caractères. L'objectif principal est de récupérer toutes les valeurs après le bit 'CD', déterminer la valeur maximale parmi celles-ci, puis afficher cette valeur maximale dans la console sous forme de LEDs virtuelles ou d'un VU-mètre.
+    <td class="colored"> 
+      <b>Matériel :</b>PC ,lanquage informatique python.<br>
+      <b>Pédagogique :</b>cour d'informatique<br>
+      <b>Documentation :</b>  <a href="doc/sujet.pdf" target="_blank"> consigne du sujet</a> 
+    </td>
+    <td class="colored"> <a href="doc/interface.pdf" target="_blank">image d'interface</a>.
+	                     <p><a href="doc/code.txt" target="_blank">code</a>.
+    <td class="colored"> Cette partie était en quelque sorte la plus difficile car au début, j’avais beaucoup de difficultés en informatique, mais avec beaucoup de travail, on a pu réussir notre programme au dernier moment et ça a marché comme voulu</td>
+  </tr>
+  
+    <tr>
+      <td colspan="5" style="background-color: #007FFF; color: darkred; font-size: 24px; text-align: center;">
+        Analyse réflexive
+      </td>
+    </tr>
+    <tr class="colored">
+      <td colspan="5">
+        <p>	Les parties que j’ai conservés de ce projet SAE illustrent son évolution, depuis la phase de conception sur KiCad jusqu’à la fabrication du circuit imprimé. Cette expérience m’a permis d’apprendre à utiliser KiCad, un logiciel de conception assistée par ordinateur (CAO), et à réaliser le routage d’une carte. Après avoir imprimé cette dernière, j’ai découvert des circuits discontinus, nécessitant de localiser le niveau où se situait le court-circuit. mes compétence de vérification acquis en premier semestre ont été précieuses, car j’ai dû utiliser un multimètre pour détecter tous les courts-circuits.
+
+Sur ce projet, je n’ai pas réussi à réaliser parfaitement le schéma en raison d’un manque de vérification et d’attention de ma part. Cependant, cette erreur m’a beaucoup appris car J’ai tenté de connecter certains composants qui n’étaient pas liés avec des fils, et de couper certains passages de cuivre pour rectifier cette erreur, mais finalement cela n’a pas fonctionné et j’ai dû utiliser une autre carte.
+
+La réalisation de ma première carte électronique a été une expérience enrichissante, qui m’a permis de développer ma compétence en conception.
+      </td>
+    </tr>
+  </tbody>
+</table>
+ <table style="width:100%">
+	</tr>
+  <td style="padding-left:10%">
+            <a href="../../index.html" class="bouton">précedent</a>
+        </td>  
+		 
+		  <td style="padding-left:10%">
+            <a href="../../../index.html" class="bouton">Accueil</a>
+        </td>  
+		 </tr>
+  
+  </table>
+</body>
+</html>

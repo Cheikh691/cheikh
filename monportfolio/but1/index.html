@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="uft-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BUT1</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-image: url('images/eee.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      animation-duration: 2s;
+      animation-name: moveBackground;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .title {
+      background-color: #007FFF;
+      font-size: 32px;
+      text-align: center;
+      border: none
+      margin-bottom: 20px;
+    }
+
+    .project {
+      margin-bottom: 30px;
+    }
+
+    .project h2 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .project-link {
+      width: 200px;
+      text-align: center;
+      margin: 10px;
+      padding: 10px;
+      background-color: #007FFF;
+      border: none; /* Supprime les bordures */
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+      overflow: hidden; /* Masque les coins arrondis des images */
+    }
+
+    .project-link:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-link img {
+      width: 100%;
+      height: 200px; /* Ajuste la hauteur de l'image */
+      object-fit: cover; /* Évite la déformation de l'image */
+      transition: transform 0.3s ease; /* Ajout de la transition */
+    }
+
+    .project-link:hover img {
+      transform: scale(1.1); /* Agrandit l'image de 10% */
+    }
+
+    .project-link p {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+	.bouton {
+	  position: absolute; /* Positionnement absolu par rapport à son conteneur le plus proche */
+  left: 43%;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 60px;
+    background-color: #007FFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Ajout de la transition */
+}
+
+.bouton:hover {
+    transform: translateY(-5px); /* Légèrement vers le haut lorsqu'on survole */
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title"><b>BUT1 2022/2023</b></div>
+
+    <div class="project">
+      <h2><b>Mes projets</b></h2>
+      <div class="project-links">
+        <a href="projets/sae1/index.html">
+          <div class="project-link">
+            <img src="images/vvv.jpeg" alt="Projet 1">
+            <p><b>Tests d'une carte de commande moteur</b></p>
+          </div>
+        </a>
+
+        <a href="projets/sae2/index.html">
+          <div class="project-link">
+            <img src="images/sss.jpg" alt="Projet 2">
+            <p><b>Réalisation d'un Sonomètre</b></p>
+          </div>
+        </a>
+
+        <a href="projets/sae3/index.html">
+          <div class="project-link">
+            <img src="images/rrr.jpg" alt="Projet 3">
+            <p><b>Défi robot</b></p>
+          </div>
+        </a>
+
+        <div class="project-link">
+         <a href="projets/sae4/index.html">
+            <img src="images/ppp.jpeg" alt="Projet 4">
+            <p><b>Réalisation d'une page web</b></p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+   </tr>
+   <table style="width:100%">
+  <td style="padding-left:10%">
+            <a href="../index.html" class="bouton">Accueil</a>
+        </td>  
+		 </tr>
+</table>
+</body>
+</html>

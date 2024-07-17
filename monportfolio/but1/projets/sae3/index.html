@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="uft-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BUT1 - Tests d'une carte de commande moteur</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 1px solid #007FFF;
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #007FFF;
+    color: darkred;
+    font-size: 24px;
+    text-align: center;
+  }
+  td.colored {
+    background-color: #F0F8FF;
+  }
+  
+   
+.bouton {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 60px;
+    background-color: #007FFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Ajout de la transition */
+  }
+
+  .bouton:hover {
+    transform: translateY(-5px); /* Légèrement vers le haut lorsqu'onF0F8FF;
+  }
+</style>
+</head>
+<body>
+<table>
+  <thead>
+    <tr>
+      <th colspan="5">Défi Robot</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="colored">
+      <td colspan="5">
+        <p><b><u>Consignes :</u></b></p>
+        <p>
+
+
+On désire réaliser un robot suiveur de ligne dans le but de participer et créer un challenge inter classe.
+Ce robot sera réalisé sans programmation ce qui nous permettra de nous familiariser avec les fonctions électroniques analogiques de bases présentes dans les systèmes embarquées. Il devra suivre une ligne matérialisée par un ruban blanc sur la moquette bleue de la salle GE210. Pour ce challenge on se propose de faire deux défis, un défi de vitesse sur une ligne droite et un défi sur une ligne courbe.
+Notre équipe est constituée de Moustapha Fall et Boubacar Diallo.Nous ne partons pas de rien, nous avons à notre disposition une base mécanique avec deux moteurs et roues.</p>
+      </td>
+    </tr>
+    <tr style="background-color: #ADD8E6;">
+      <td width="20%"> Activités réalisées </td>
+    <td width="20%"> Ressources utilisées </td>
+    <td width="20%"> Traces </td>
+    <td width="20%"> Autoévaluation </td> 
+    <tr>
+      <td class="colored">
+        
+        <b>Tâche:</b> les Analyses fonctionelles.<br>
+        <b>Objectif :</b> Comprendre les attentes, identifier les fonctions essentielles, définir les tâches.</b> .
+      </td>
+      <td class="colored">
+        <b>Matériel :</b> PC, Logiciel Word<br>
+        <b>Pédagogique </b>: Cour VE1</b>.<br>
+		<b>humaine </b>: Mr Lucas</b>.<br>
+        
+      </td>
+      <td class="colored"><a href="doc/analyse.pdf" target="_blank">description</a>.</td>
+      <td class="colored">j'ai pas eu trop de souci </td>
+    </tr>
+    <tr>
+    <td class="colored"> 
+      
+      <b>Tâche:</b> Tester les élements .<br>
+      <b>Objectif:</b> s’assurer qu’ils fonctionnent comme prévu et qu’ils répondent aux besoins du robot.
+    </td>
+    <td class="colored"> 
+      <b>Matériel :</b>bradboard, Alimentation , multimétre.<br>
+      <b>Pédagogique</b> :cour d'électronique.<br>
+      <b>Documentation :</b>datasheet.
+    </td>
+    <td class="colored"> <a href="doc/rapport.pdf" target="_blank">rapport</a>. </td>
+    <td class="colored">  j’ai pas pu tester tous les éléments car y'avait trop de charge, mais je n’ai pas eu beaucoup de soucis avec les éléments que j’ai testé.</td>
+  </tr>
+  <tr>
+    <td class="colored"> 
+      
+      <b>Tâche:</b>  Fonction superviseur.<br>
+      <b>Objectif:</b> Protéger la batterie et surveiller sa tension.</b> .
+    <td class="colored"> 
+      <b>Matériel :</b> PC logiciel CAO et Ltspice,alimentation,multimétre, Bradboard.<br>
+      <b>Pédagogique : </b>cour d'électronique , CAO et cour de simulation avec Ltspice.<br>
+      <b>Documentation :</b> <a href="doc/superviseur.pdf" target="_blank">schéma de départ</a>.
+    </td>
+    <td class="colored"> <a href="doc/sup.pdf" target="_blank">illustration</a>. </td>
+    <td class="colored"> Reprendre le schéma n’était pas une tâche difficile pour moi, mais la difficulté était au niveau de la compréhension du schéma. Cependant, avec les explications de M. Lucas, nous avons pu comprendre son fonctionnement, et cela a été un succès. </td>
+  </tr>
+    <tr>
+    <td class="colored"> 
+      
+      <b>Tâche: </b> Fonction Astable.<br>
+      <b>Objectif:</b>  Générer un signal carré avec un rapport cyclique ajustable pour controler la vitesse.</b> .
+    <td class="colored"> 
+      <b>Matériel :</b>.PC logiciel Ltspice ,bradboard, oscillioscope, alimentation<br>
+      <b>Pédagogique :</b>. cour d'électronique,et cour de simulation avec Ltspice.<br>
+      <b>Documentation :</b>.<a href="https://youtu.be/ixs9yMHSkAw?si=yWN3h2EiTMUam5UZ" target="_blank"> Youtube</a>.</td></td>
+    </td>
+    <td class="colored"> <a href="doc/astable.pdf" target="_blank">illustration</a>.</td>
+    <td class="colored"> On n’a pas eu trop de soucis à réaliser cette fonction, mais après l’avoir réalisée, on a eu quelques erreurs qu’on ne comprenait pas, comme quelques parasites au niveau du signal et une durée inégale de la charge et de la décharge du condensateur. Cependant, avec l’intervention de M. Lucas, nous les avons bien résolues, et cela a été un succès.</td>
+  </tr>
+    <tr>
+    <td class="colored"> 
+      
+      <b>Tâche: </b> Fonction marche arrêt.<br>
+      <b>Objectif:</b> Faire une bascule RS pour contrôler efficacement son activation et désactivation lors de la préparation avant et après course.</b> .
+    <td class="colored"> 
+      <b>Matériel </b>: Bradboard, alimentation, oscillioscope.<br>
+      <b>Pédagogique :</b>cour d'électronique et automatisme numérique.<br>
+      <b>Documentation :</b>Schéma bascule RS.
+    </td>
+    <td class="colored"> <a href="doc/bascule.pdf" target="_blank">illustration</a>.</td>
+    <td class="colored"> pas trop de difficulté, c'était avec succés</td>
+  </tr>
+     <tr>
+    <td class="colored"> 
+      
+      <b>Tâche:</b>  Commander les vitesses du moteur.<br>
+      <b>Objectif:</b> Réaliser une porte "OU" à deux entrées pour contrôler la vitesse et la direction.
+    <td class="colored"> 
+      <b>Matériel :</b> Bradboard, alimentation, oscillioscope.<br>
+      <b>Pédagogique :</b>cour d'électronique et automatisme numérique.<br>
+      <b>Documentation :</b>datasheet .
+    </td>
+    <td class="colored"> <a href="doc/or.pdf" target="_blank">schéma</a>.</td>
+    <td class="colored"> Cette fonction n’a pas été difficile, nous l’avons réalisée avec succès</td>
+  </tr>
+    <tr>
+    <td class="colored"> 
+      
+      <b>Tâche:</b>  Schéma d'ensemble.<br>
+      <b>Objectif:</b> Faciliter la conception et l'assemblage du robot.
+    <td class="colored"> 
+      <b>Matériel :</b>PC logiciel CAO,.<br>
+      <b>Pédagogique :</b> cour de CAO.<br>
+      <b>Documentation :</b>Tous les schémas précédents.
+    </td>
+    <td class="colored"> <a href="doc/carte.pdf" target="_blank">illustration</a>.</td>
+    <td class="colored">Je n’ai pas eu trop de difficulté à réaliser tous les schémas, mais mes difficultés se situaient au niveau du routage du PCB. J’ai eu beaucoup de mal à choisir les bonnes empreintes et à savoir les contraintes. Finalement, nous avons imprimé la carte, mais elle était difficile à souder car les pistes étaient trop proches du GND. Ce n’était pas un vrai succès
+  </tr>
+  
+    <tr>
+      <td colspan="5" style="background-color: #007FFF; color: darkred; font-size: 24px; text-align: center;">
+        Analyse réflexive
+      </td>
+    </tr>
+    <tr class="colored">
+      <td colspan="5">
+       Nous avons bien abouti à la réalisation du robot et avons réussi à implémenter la majorité des fonctions. Au final, il était capable de suivre la ligne, mais parfois le virage à gauche ne fonctionnait pas avec une tension d'entrée de 6 V. Nous avons dû réduire la tension pour que cela fonctionne, mais dans ce cas, le robot ne pouvait pas rouler très vite. On peut dire que nous avons réussi à 80%. Ce projet m'a permis de mieux comprendre le fonctionnement de l'électronique analogique et numérique, et il a regroupé toutes les compétences que nous avons vues au premier semestre.
+<p><a href="doc/video.mp4"target="_blank">petit amusement 😊</a> <p/>
+      </td>
+    </tr>
+  </tbody>
+</table>
+ <table style="width:100%">
+	</tr>
+  <td style="padding-left:10%">
+            <a href="../../index.html" class="bouton">précedent</a>
+        </td>  
+		 
+		  <td style="padding-left:10%">
+            <a href="../../../index.html" class="bouton">Accueil</a>
+        </td>  
+		 </tr>
+  
+  </table>
+</body>
+</html>

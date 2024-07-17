@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Mon PORTFOLIO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('moi/images/bbb.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            animation-duration: 2s;
+            animation-name: moveBackground;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 10px 10px; /* Déplace légèrement l'image vers le bas et la droite */
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        header img {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        section {
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border: solid;
+            border-color: blue;
+        }
+
+        section h2, h1 {
+            background: #007FFF;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .image-droite {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .image-gauche {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        header table {
+            margin-top: -5px; /* Ajustez cette valeur selon vos besoins */
+        }
+
+        /* Animation pour les titres */
+        h1, h2 {
+            font-size: 36px;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-name: slideInDown;
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+       /* Animation des liens des "BUT" */
+.bouton {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 60px;
+    background-color: #007FFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Ajout de la transition */
+}
+
+.bouton:hover {
+    transform: translateY(-5px); /* Légèrement vers le haut lorsqu'on survole */
+}
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px); /* Légèrement vers le haut lorsqu'on survole */
+            }
+        }
+
+        /* Animation pour le titre principal */
+        h1#titre-principal {
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-name: moveUpDown;
+        }
+
+        @keyframes moveUpDown {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+<img src="moi/images/ggg.png" class="image-droite" alt="Description de l'image" width="100" height="100">
+<img src="moi/images/ddd.gif" class="image-gauche" alt="Description de l'image" width="100" height="100">
+
+<header>
+    <table style="width:100%;">
+        <tr>
+            <td style="width:80%;" align="center">
+                <h1 id="titre-principal" style="color:white;background:#007FFF;width:70%" align="center"> Bienvenue sur mon portfolio!</h1>
+                <h2 style="color:white;width:25%">LO <br>Cheikh Tidiane</h2> <!-- Ajoutez votre nom ici -->
+            </td>
+        </tr>
+    </table>
+
+    <img src="moi/images/cccc.jpg" alt="Profile Picture">
+</header>
+
+<table style="width:100%;">
+    <tr>
+        <td style="padding-left:3%;padding-right:3%">
+            <h1 style="color:white;background:#007FFF;width:70%" align="center">À propos de moi</h1>
+        </td>
+        <td style="padding-left:3%;padding-right:3%">
+            <h1 style="color:white;background:#007FFF;width:70%" align="center">About me</h1>
+        </td>
+    </tr>
+    <tr>
+        <td style="border-right:none;background-color: white;">
+            <p align="justify" style="padding:5%">
+               Bonjour, je m'appelle Cheikh Tidiane. Je suis d’origine sénégalais de 18 ans. 
+               J'ai obtenu mon baccalauréat général avec une spécialisation en mathématiques, physique-chimie et sciences de la vie.
+               Actuellement, je suis en première année de Bachelor Universitaire de Technologie en Génie Électrique et Informatique Industrielle (BUT GEII). 
+               Cette formation me passionne profondément, car j'ai un intérêt marqué pour l'électronique.
+               Je suis fasciné par le fait que ce domaine soit omniprésent et qu'il évolue constamment avec la technologie.<br>
+               
+               Après le BUT j’aimerai poursuivre mes études en une école d'ingénieurs, afin de me spécialiser dans la conception de cartes électroniques.
+               Ma principale qualité réside dans ma motivation et mon engagement à relever tous les défis qui se présentent à moi.<br>
+               
+               J'apprécie le travail en équipe et j'aime prendre des responsabilités. Je suis quelqu'un de calme, doté d'un esprit ouvert.
+               En dehors de mes études, j'ai une passion pour la musique et le sport. J'aime également passer du temps avec mes amis.
+
+            </p
+            <p align="right"></p>
+            <p><a href="moi/doc/cv.pdf" target="_blank">Mon CV </a></p>
+        </td>
+        <td style="border-right:none;background-color: white;">
+            <p align="justify" style="padding:5%">
+             Hello, my name is Cheikh Tidiane. I am 18 years old and of Senegalese origin.
+             I obtained my baccalauréat général with a major in mathematics, physics-chemistry and life sciences.
+             I'm currently in my first year of a Bachelor of Technology in Electrical Engineering and Industrial Computing (BUT GEII).
+             I'm very passionate about this course, as I have a strong interest in electronics. 
+             I'm fascinated by the fact that this field is omnipresent and constantly evolving with technology.<br>
+             
+             the BUT I'd like to continue my studies at an engineering school, to specialize in electronic board design.<br> 
+             
+             My main quality is my motivation and commitment to meeting any challenge that comes my way. I enjoy teamwork and taking on responsibility.
+             I'm a calm, open-minded person.
+             Outside my studies, I have a passion for music and sport. I also enjoy spending time with my friends.
+
+            </p>
+            <p align="right"></p>
+            <p><a href="doc/cv.pdf" target="_blank">My CV </a></p>
+        </td>
+    </tr>
+</table>
+
+<section id="context">
+    <h1>Présentation GEII</h1>
+    <p>Le BUT GEII (Bachelor Universitaire de Technologie Génie Électrique et Informatique Industrielle) est une formation universitaire de trois ans qui mêle théorie et pratique. Cette formation est axée sur l’innovation et le développement technologique.
+
+Les diplômés du BUT GEII sont capables de mettre en place et gérer des installations électriques, de concevoir, réaliser, programmer et maintenir des cartes électroniques fixes ou embarquées. Ils peuvent aussi automatiser et contrôler des processus industriels, gérer et maintenir des réseaux informatiques industriels, et développer des systèmes de traitement et de transmission de l’information.
+
+<br>Il existe trois parcours proposés par la spécialité génie électrique et informatique industrielle:<br><br>
+
+<b> • Automatisme et Informatique Industrielle (AII):</b> Ce parcours met l’accent sur l’automatisme et la robotique, incontournables dans le secteur de la production industrielle.<br>
+<b> • Électricité et Maîtrise de l’Énergie (EME): </b> Ce parcours se concentre sur l’électricité et la maîtrise de l’énergie.<br>
+<b>• Électronique et Systèmes Embarqués (ESE) :</b> Ce parcours prépare les élèves à l’analyse, à la conception et à la réalisation de systèmes électroniques.<br> <br><a href="doc/reference.pdf" target="_blank"> <b>Référentiel de compétences
+BUT GEII</b></a></p>
+</section>
+
+<table style="width:100%">
+    <tr>
+        <td style="padding-left:10%">
+            <a href="but1/index.html" class="bouton"><b>BUT1</b></a>
+        </td>
+        <td style="padding-left:10%">
+            <a href="but2/index.html" class="bouton"><b>BUT2</b></a>
+        </td>
+        <td style="padding-left:10%">
+            <a href="but3/index.html" class="bouton"><b>BUT3</b></a>
+        </td>     
+    </tr>
+</table>
+</body>
+</html>
